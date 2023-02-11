@@ -2,7 +2,7 @@
 
 # Set PostgreSQL connection information
 PGUSER=postgres
-PGPASSWORD=postgres
+# PGPASSWORD=postgres
 PGHOST=localhost
 PGPORT=5432
 PGDATABASE=postgres
