@@ -1,0 +1,25 @@
+name: Install and Start PostgreSQL 13 on Remote CentOS 7 Host
+
+on: [push]
+
+jobs:
+  setup:
+    runs-on: centos-7
+
+    steps:
+    - name: Install SSH client
+      run: |
+        set -e
+        sudo yum install -y openssh-clients || echo "openssh-clients already installed"
+
+    - name: SSH into remote host
+      uses: appleboy/ssh-action@master
+      with:
+        host: 172.16.0.239
+        username: ${{ secrets.SSH_USERNAME }}
+        password: ${{ secrets.SSH_PASSWORD }}
+        script: |
+          sudo yum install -y https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+          sudo yum install -y postgresql13-server postgresql13-contrib
+          sudo /usr/pgsql-13/bin/postgresql-13-setup initdb
+          sudo systemctl start postgresql-13.service
