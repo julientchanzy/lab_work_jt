@@ -4,16 +4,16 @@
 PGUSER=postgres
 PGHOST=localhost
 PGPORT=5432
-PGDATABASE=mydatabase
+PGDATABASE=postgres
 
 # Set email parameters
-EMAIL_TO="you@example.com"
+EMAIL_TO="tchanzyromuald@gmail.com"
 EMAIL_SUBJECT="PostgreSQL status update"
 EMAIL_FROM="postgres@localhost"
-SMTP_SERVER="smtp.example.com"
+SMTP_SERVER="tchanzyromuald@gmail.com"
 SMTP_PORT="587"
-SMTP_USER="username"
-SMTP_PASS="password"
+SMTP_USER="tchanzyromuald@gmial.com"
+SMTP_PASS="Limited2021!"
 
 # Define function to send email
 send_email() {
